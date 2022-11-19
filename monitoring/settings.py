@@ -14,7 +14,7 @@ import os
 
 LOGIN_URL = "/login/auth0" 
 LOGIN_REDIRECT_URL = "/" 
-LOGOUT_REDIRECT_URL = "https://isis2503-juanreyes01.us.auth0.com/v2/logout?returnTo=http%3A%2F%2Fip_publica_instancia:8080"
+LOGOUT_REDIRECT_URL = "https://isis2503-juanreyes01.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F34.27.222.239:8080"
 SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
 SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503-juanreyes01.us.auth0.com' 
 SOCIAL_AUTH_AUTH0_KEY = 'UI58DJKmtIUzs5hUqRdPkzXoBMCkCbzO' 
@@ -88,11 +88,15 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
-    }
-}
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': 'monitoring_db',
+         'USER': 'monitoring_user',
+         'PASSWORD': 'isis2503',
+         'HOST': '34.27.222.239',
+         'PORT': '5432',
+     }
+ }
 
 
 # Password validation
